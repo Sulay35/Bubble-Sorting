@@ -5,16 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bubble sorting algorith</title>
     <style> body {padding: 10px; margin: 10px;}
+            p{font-weight: 600;}
+            span{
+              font-weight: lighter;
+            }
             button{bottom:5px;}
             #arrayT{font-size:15px;}
+            #credits{position:absolute; bottom: 0px; right: 15px;}
      </style>
     <script src="p5.js"></script>
     <script src="p5.sound.js"></script>
     <script src="sketch.js"></script>
   </head>
   <body>
-    <p id="arrayT"></p>
-    <button onclick="generateNewSet()">Generate new array !</button>
-    <script src="display.js"></script>
+    <p>Array : <span id="arrayT"></span>  </p>
+    <p>Comparisons : <span id="comparisonsT"></span></p>
+    <p>Average of comparisons : <span id="averageT"></span></p>
+
+    <button id="button" onclick="generateNewSet()">Generate new array !</button>
+    <p id="credits">Credit : @Sulaymane Dagnet
+      Email : Sulaymane.dagnet@laposte.net
+    </p>
   </body>
 </html>
+
