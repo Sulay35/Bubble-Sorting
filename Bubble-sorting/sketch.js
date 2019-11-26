@@ -1,7 +1,18 @@
+function moyenne(array){
+  var sum = 0;
+  var len = array.length;
+  for(var  i = 0; i < len; i++ ){
+    sum += array[i];
+  }
+  var moyenne = sum/len;
+  return moyenne;
+}
+
 
 function randomI(min, max){
   return Math.round(Math.random() * max - min);// return a value between min and max 
 }
+
 // shuffle an existing array with random values with no repeatition
 function shuffleArray(array){
   var tempo;
@@ -28,8 +39,9 @@ function bubbleSort(array){
       
       // console visualisation
       // console.log(array[x], array[x+1]);
+
       comparisons += 1;
-      console.log("Number of comparisons : ", comparisons);
+      //console.log("Number of comparisons : ", comparisons);
       
       temp = array[x];// keep the value to swap
       array[x] = array[x+1];// change the values of the lower 
@@ -38,15 +50,26 @@ function bubbleSort(array){
   }
 }
 
-function verification(data){
-  for(var i = 0; i < data.length; i++){
-    //if(dataset[i] < data[i+1]){
-      fill(255,0,0);
-      rect(i*10, 210, 10, -data[i]*2);
-      //}
-    }
+
+function verification(array){
+  var errors = 0;
+  for(var i = 0; i < array.length; i++){
+    if(array[i] != rightSet[i]){
+      
+      errors += 1; 
+    }else{
+      fill(0,255,0);// color of the working tile
+      rect(i*10, 210, 10, -array[i]*2);
+
   }
-  
+  }
+  if(errors == 0){
+    console.log(array);
+    generateNewSet();
+
+  }
+}
+
   // ____________________________________________________________________________________________________________________________ 
   // |-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|
   // |-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-| Program |-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|
@@ -54,17 +77,21 @@ function verification(data){
   // -----------------------------------------------------------------------------------------------------------------------------
   var comparisons = 0;
   var dataset = [];
+  var rightSet = [];
+  var comparisonArray = [];
   
-  //Button function/*
+  //Button function
   function generateNewSet(){
-    comparisons = 0;
-    dataset = shuffleArray(dataset);
+    comparisonArray.push(comparisons);// add comparisons value to the comparison array for the average
+    comparisons = 0;// Reset the counter of comparisons
+    dataset = shuffleArray(dataset);// create a new random array
   }
   
   function setup() {
     //create an array of values
     for(var i = 1; i <= 100; i++){
       dataset.push(i);
+      rightSet.push(i);
     }
     //Shuffle the dataset
     dataset = shuffleArray(dataset);
@@ -72,11 +99,19 @@ function verification(data){
   }
   
   function draw() {
+    var averageT = document.getElementById('averageT');
     var arrayT = document.getElementById('arrayT');
+    var button = document.getElementById('button');
+    var comparisonsT = document.getElementById('comparisonsT');
     if(arrayT != null){
       arrayT.innerText = dataset;
+      comparisonsT.innerText = comparisons;
+      averageT.innerText = moyenne(comparisonArray);
+      
     }
     
+
+
     background(50);
     fill(0,0,255)
     //Draw the tiles of each values
@@ -84,4 +119,10 @@ function verification(data){
       rect(i*10, 210, 10, -dataset[i]*2);
     }
     bubbleSort(dataset);
-  }
+   
+    verification(dataset)
+    
+}
+
+// auto
+//setInterval(generateNewSet, 3000);
