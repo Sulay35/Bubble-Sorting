@@ -11,3 +11,8 @@ The sorting algorithm work like that:
   for x in dataset:
     if dataset[x] > dataset[x+1]:
       swap dataset[x] and dataset[x+1] values
+      
+      
+**TO DO**
+  - feature 1 : 
+    changeable array length
