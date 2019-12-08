@@ -33,6 +33,7 @@ function bubbleSort(array){
   }
 }
 
+---
       
 **TO DO**
   - feature 1 : 
