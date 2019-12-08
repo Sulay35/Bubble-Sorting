@@ -13,8 +13,6 @@ The sorting algorithm works like that:
       swap dataset[x] and dataset[x+1] values
       
 javascript
-function bubbleSort(array){
-  
   for(var x = 0; x < array.length; x++){
     
     var temp; // temporary variable for a value
@@ -31,7 +29,6 @@ function bubbleSort(array){
       array[x+1] = temp; // the next tile has the value of the working tile
     }
   }
-}
 
 ---
       
