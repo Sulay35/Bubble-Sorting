@@ -4,13 +4,17 @@ Bubble sorting algorithm with javascript
 **Using P5.js library:**
   https://p5js.org/
   
-The sorting algorithm works like that:
-
+##### The sorting algorithm works like that:
+   
+   The dataset is created from an existing array and it shuffle it with `shuffle(array)` function. 
+  
   dataset --> array of random values between 0 and 100
   
   for x in dataset:
     if dataset[x] > dataset[x+1]:
       swap dataset[x] and dataset[x+1] values
+      
+      
       
 javascript
     
