@@ -13,7 +13,6 @@ The sorting algorithm works like that:
       swap dataset[x] and dataset[x+1] values
       
 javascript
-  for(var x = 0; x < array.length; x++){
     
     var temp; // temporary variable for a value
     var freq = map(array[x], 0, 100, 0,1)
@@ -28,7 +27,6 @@ javascript
       array[x] = array[x+1];// change the values of the lower 
       array[x+1] = temp; // the next tile has the value of the working tile
     }
-  }
 
 ---
       
