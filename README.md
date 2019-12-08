@@ -19,8 +19,6 @@ Bubble sorting algorithm with javascript
 javascript
     
     var temp; // temporary variable for a value
-    var freq = map(array[x], 0, 100, 0,1)
-    
     if(array[x] > array[x+1]){// if the next value is lower then the actual
       fill(255,0,0);// color of the working tile
       rect(x*10, 210, 10, -array[x]*2);//draw the evaluate value 
