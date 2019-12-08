@@ -10,10 +10,10 @@ Bubble sorting algorithm with javascript
   
   dataset --> array of random values between 0 and 100
   
-  for x in dataset:
-.....if dataset[x] > dataset[x+1]:
-........swap dataset[x] and dataset[x+1] values
-      
+  `for x in dataset:
+    if dataset[x] > dataset[x+1]:
+      swap dataset[x] and dataset[x+1] values
+   `   
       
       
 javascript
