@@ -36,4 +36,5 @@ javascript
 **TO DO**
   - feature 1 : 
     changeable array length
+  - add coktail sort and merge sort to the repo 
 # Insertion-Sorting
